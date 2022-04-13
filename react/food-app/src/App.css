@@ -1,6 +1,6 @@
 .food-ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 20%);
+  grid-template-columns: repeat(4, 20%);
 }
 
 .form{
@@ -16,8 +16,8 @@
   padding: 30px;
   height: 20em;
   background-color: rgb(227, 227, 227);
-
   list-style: none;
+  box-shadow: 0 1px 3px 0.9px;
 
 }
 
@@ -35,7 +35,7 @@
 
 
 @media only screen and (max-width: 800px) { 
-  .App {
+  .food-ul {
     display: grid;
     grid-template-columns: 70%;
 
