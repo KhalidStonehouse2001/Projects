@@ -23,29 +23,31 @@ const Foodcard = () => {
           <input className='input-search' onChange={onChange} type='text' placeholder='UK, Fish, Pizza ...'/>
         </form>
       <div className="App">
+        <ul className='food-ul' data-testid='food-card-item'>
           {food.map((item) => {
             if(searchTerm){
              if(item.name.includes(searchTerm) || item.origin.includes(searchTerm)) {
               return (
-                <li key={item.id} className='box'>
+                <li  key={item.id} className='box'>
                 <p>Food Name: {item.name}</p>
                <p>Place Of Origin: {item.origin}</p>
                <p>Star Rating: {item.starRating} ⭐️</p>
-               <img className='image' src={item.image}/>
+               <img data-testid='food-card-item-image' className='image' src={item.image}/>
             </li> )
              }  
                
             }  else if(!searchTerm) {
-            return <li key={item.id} className='box'>
+            return <li  key={item.id} className='box'>
                 <p>Food Name: {item.name}</p>
                <p>Place Of Origin: {item.origin}</p>
                <p>Star Rating: {item.starRating} ⭐️</p>
-               <img className='image' src={item.image}/>
+               <img data-testid='food-card-item-image' className='image' src={item.image}/>
             </li>
   
             }
               
           })}
+          </ul>
       </div>
   
       </div>

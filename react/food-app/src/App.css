@@ -1,6 +1,6 @@
-.App {
+.food-ul {
   display: grid;
-  grid-template-columns: repeat(4, 20%);
+  grid-template-columns: repeat(auto-fit, 20%);
 }
 
 .form{
