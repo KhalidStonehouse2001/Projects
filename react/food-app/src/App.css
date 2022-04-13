@@ -26,6 +26,14 @@
   border-radius: 40%;
 }
 
+.input-search{
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+
 @media only screen and (max-width: 800px) { 
   .App {
     display: grid;
@@ -39,6 +47,7 @@
   .image{
     width: 30%;
     border-radius: 40%;
+ 
   }
  
 }

@@ -19,13 +19,13 @@ const Foodcard = () => {
       <div>
   
         <form onSubmit={onSubmit} className='form'>
-          <label >Search </label>
-          <input onChange={onChange} type='text' placeholder='Burger, Pizza ...'/>
+          <label >Search For Your Favourite Food</label>
+          <input className='input-search' onChange={onChange} type='text' placeholder='UK, Fish, Pizza ...'/>
         </form>
       <div className="App">
           {food.map((item) => {
             if(searchTerm){
-             if(item.name === searchTerm || item.origin === searchTerm) {
+             if(item.name.includes(searchTerm) || item.origin.includes(searchTerm)) {
               return (
                 <li key={item.id} className='box'>
                 <p>Food Name: {item.name}</p>
