@@ -35,23 +35,8 @@ function App() {
 
       <ul className="food-ul">
         {food
-        .filter((item) => {
-          let returnItem = true
-          if (searchTerm) {
-            if (
-              item.name.includes(searchTerm) ||
-              item.origin.includes(searchTerm)
-            ) {
-              returnItem = true
-            } else  {
-            return returnItem = false
-          }
-          return returnItem
-          }
-        })
-        .map((item) => {
-          return <Foodcard food={item} key={item.id} />;
-        })}
+        .filter((item) => searchTerm ? item.name.includes(searchTerm) : false).map((item) => <Foodcard food={item} key={item.id} />)
+        }
       </ul>
 
       
