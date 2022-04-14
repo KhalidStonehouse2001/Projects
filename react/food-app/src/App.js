@@ -35,11 +35,14 @@ function App() {
 
       <ul className="food-ul">
         {food
-        .filter((item) => item.name.includes(searchTerm) || item.origin.includes(searchTerm)).map((item) => <Foodcard food={item} key={item.id} />)
-        }
+          .filter(
+            (item) =>
+              item.name.includes(searchTerm) || item.origin.includes(searchTerm)
+          )
+          .map((item) => (
+            <Foodcard food={item} key={item.id} />
+          ))}
       </ul>
-
-      
     </div>
   );
 }
