@@ -31,21 +31,30 @@ function App() {
           placeholder="UK, Fish, Pizza ..."
         />
       </form>
+      <h1 className="results">Results</h1>
 
       <ul className="food-ul">
-        {food.map((item) => {
+        {food
+        .filter((item) => {
+          let returnItem = true
           if (searchTerm) {
             if (
               item.name.includes(searchTerm) ||
               item.origin.includes(searchTerm)
             ) {
-              return <Foodcard food={item} key={item.id} />;
-            }
-          } else if (!searchTerm) {
-            return <Foodcard food={item} key={item.id} />;
+              returnItem = true
+            } else  {
+            return returnItem = false
           }
+          return returnItem
+          }
+        })
+        .map((item) => {
+          return <Foodcard food={item} key={item.id} />;
         })}
       </ul>
+
+      
     </div>
   );
 }
